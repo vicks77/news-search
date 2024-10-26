@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.ehcache.org/v3"
+        xsi:schemaLocation="http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core.xsd">
+
+    <!-- Define a cache with disk persistence -->
+    <cache alias="newsCache">
+        <expiry>
+            <ttl unit="minutes">60</ttl> <!-- Set time to live for cache entries -->
+        </expiry>
+        <resources>
+            <heap unit="entries">1000</heap> <!-- Store up to 1000 entries in heap -->
+            <disk unit="MB" persistent="true">200</disk> <!-- Store up to 200MB on disk with persistence -->
+        </resources>
+        <persistence directory="D:\\Users\\cache\\aniket"/> <!-- Enable persistence with a valid directory path -->
+    </cache>
+
+</config>
